@@ -2,10 +2,8 @@ export const minBy = <T>(array: T[], cb: (item: T | undefined) => number): T | u
   if (array.length === 0) {
     return undefined;
   }
-
   let minItem = array[0];
   let minValue = cb(minItem);
-
   for (const item of array) {
     const value = cb(item);
     if (value < minValue) {
@@ -13,7 +11,6 @@ export const minBy = <T>(array: T[], cb: (item: T | undefined) => number): T | u
       minItem = item;
     }
   }
-
   return minItem;
 };
 
@@ -21,10 +18,8 @@ export const maxBy = <T>(array: T[], cb: (item: T | undefined) => number): T | u
   if (array.length === 0) {
     return undefined;
   }
-
   let maxItem = array[0];
   let maxValue = cb(maxItem);
-
   for (const item of array) {
     const value = cb(item);
     if (value > maxValue) {
@@ -32,6 +27,5 @@ export const maxBy = <T>(array: T[], cb: (item: T | undefined) => number): T | u
       maxItem = item;
     }
   }
-
   return maxItem;
 };
