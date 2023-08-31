@@ -1,16 +1,16 @@
-import { data } from "../data/data";
+import { Planet } from "../data/data"; // Assuming you have a Planet interface or type defined
 
 // SPACE DATA SAMPLE EXERCISE 0
 // Return the name of the first Planet in the array
 // Return example: 'Planet Name'
 
-export function getFirstPlanetName(data) {
-  // Your code goes here...
+export function getFirstPlanetName(data: { planets: Planet[] }): string | undefined {
   const planets = data.planets;
-  //console.log(planets);
-  return planets[0].name;
+  if (planets[0]) {
+    return planets[0].name;
+  }
+  return undefined;
 }
-
 
 
 // === TEST YOURSELF ===
